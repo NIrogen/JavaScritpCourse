@@ -1,7 +1,7 @@
 'use strict'
 let title = prompt('как называется ваш проект?', 'калькулятор верстки');
 let screens = prompt('Какие типы экранов нужно разработать?', "Простые, Сложные, Интерактивные");
-let screenPrice = +prompt('Сколько будет стоить данная работа?' , '10000');\
+let screenPrice = +prompt('Сколько будет стоить данная работа?' , '10000');
 let adaptive = confirm("Нужен ли адаптив на сайте?");
 
 let rollBack = 10 ;
@@ -18,7 +18,7 @@ let servicePercentPrice
 
 
 
-function getAllServicePrices(num1, num2) {
+const getAllServicePrices = function() {
   // return num1 + num2 
   let sum 
 
@@ -44,12 +44,12 @@ function getServicePercentPrices(num1) {
 }
 
 title = getTitle(title)
-allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
-fullPrice = getFullPrice(screenPrice, allServicePrices);
+allServicePrices = getAllServicePrices();
+fullPrice = +getFullPrice(screenPrice, allServicePrices);
 servicePercentPrice = getServicePercentPrices(fullPrice);
 console.log(servicePercentPrice);
 
-console.log("allServicePrices" ,allServicePrices)
+console.log("allServicePrices " , allServicePrices)
 
 
 
